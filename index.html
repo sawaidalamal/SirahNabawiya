@@ -1,0 +1,256 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>مسيرة النبي ﷺ</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap">
+<style>
+/* Layout: one reading column, a vertical "spine" on the right (RTL) with era bands; events hang off the spine as dated entries */
+:root{
+  --bg:#f3f5f2; --surface:#ffffff; --ink:#1d2a26; --muted:#5d6b66; --line:#d5ddd8;
+  --accent:#1f6b55; --accent-soft:#e1efe9;
+  --c-life:#6b5b95; --c-dawah:#1f6b55; --c-hijra:#2f6f9f; --c-war:#a8432e; --c-marriage:#b0598a; --c-treaty:#8a6d1f;
+  --font-display:"Amiri","Traditional Arabic","Times New Roman",serif;
+  --font-body:"IBM Plex Sans Arabic","Segoe UI","Tahoma",sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#121816; --surface:#1a2320; --ink:#e6ece9; --muted:#9aa8a2; --line:#2c3833;
+  --accent:#5fbf9f; --accent-soft:#1f322b;
+  --c-life:#a99ad3; --c-dawah:#5fbf9f; --c-hijra:#6fb0e0; --c-war:#e58a72; --c-marriage:#e39ac1; --c-treaty:#d6b65c;
+  color-scheme:dark }}
+:root[data-theme="dark"]{
+  --bg:#121816; --surface:#1a2320; --ink:#e6ece9; --muted:#9aa8a2; --line:#2c3833;
+  --accent:#5fbf9f; --accent-soft:#1f322b;
+  --c-life:#a99ad3; --c-dawah:#5fbf9f; --c-hijra:#6fb0e0; --c-war:#e58a72; --c-marriage:#e39ac1; --c-treaty:#d6b65c;
+  color-scheme:dark }
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:15px;line-height:1.75;direction:rtl}
+.wrap{max-width:860px;margin:0 auto;padding-block:32px 64px;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header h1{font-family:var(--font-display);font-size:clamp(2rem,6vw,3rem);line-height:1.2;margin:0;text-wrap:balance}
+header p{color:var(--muted);margin:.5rem 0 0;max-width:62ch}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin:24px 0 8px}
+.fact{border-top:2px solid var(--accent);padding-top:8px}
+.fact b{display:block;font-family:var(--font-display);font-size:1.7rem;line-height:1.2;font-variant-numeric:tabular-nums}
+.fact span{color:var(--muted);font-size:.85rem}
+.controls{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:12px;margin-top:16px;border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font:inherit;font-size:.85rem;border:1px solid var(--line);background:var(--surface);color:var(--ink);
+  padding:4px 12px;border-radius:999px;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.chip .dot{width:9px;height:9px;border-radius:50%;background:var(--c)}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.chip:focus-visible,#q:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.searchrow{display:flex;gap:12px;align-items:center;margin-top:10px;flex-wrap:wrap}
+#q{font:inherit;flex:1;min-width:0;padding:6px 12px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink)}
+#count{color:var(--muted);font-size:.85rem;font-variant-numeric:tabular-nums}
+.era{margin-top:40px}
+.era-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.era-head .num{font-family:var(--font-display);color:var(--accent);font-size:1.1rem;letter-spacing:.02em}
+.era-head h2{font-family:var(--font-display);font-size:1.7rem;margin:0;line-height:1.3}
+.era-head .span{color:var(--muted);font-size:.85rem}
+ol.events{list-style:none;margin:16px 0 0;padding:0 28px 0 0;border-right:2px solid var(--line);display:flex;flex-direction:column;gap:18px}
+.ev{position:relative;min-width:0}
+.ev::before{content:"";position:absolute;right:-36px;top:.55em;width:12px;height:12px;border-radius:50%;
+  background:var(--surface);border:3px solid var(--c)}
+.ev .when{display:flex;flex-wrap:wrap;gap:4px 10px;align-items:baseline;font-size:.85rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.ev .when .h{color:var(--ink);font-weight:600}
+.tag{font-size:.75rem;padding:0 8px;border-radius:999px;background:var(--accent-soft);color:var(--ink)}
+.tag.cat{background:transparent;border:1px solid var(--c);color:var(--c)}
+.ev h3{margin:2px 0 2px;font-size:1.08rem;font-weight:600;line-height:1.5}
+.ev p{margin:0;color:var(--ink);max-width:66ch}
+.ev .ref{font-size:.8rem;color:var(--muted);margin-top:2px}
+.empty{color:var(--muted);margin-top:32px}
+footer{margin-top:48px;color:var(--muted);font-size:.82rem;border-top:1px solid var(--line);padding-top:12px;max-width:66ch}
+@media (prefers-reduced-motion:no-preference){.ev{transition:opacity .2s}}
+@media (max-width:480px){ol.events{padding-right:20px}.ev::before{right:-28px}}
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>مسيرة النبي ﷺ</h1>
+    <p>أهمّ مراحل السيرة من قبل المولد إلى الوفاة: النشأة، والدعوة، والهجرة، والغزوات، وزواجه بأمهات المؤمنين، والمعاهدات. التواريخ والأعداد منقولة من الدراسة المستخرجة من «الرحيق المختوم».</p>
+    <div class="facts">
+      <div class="fact"><b>63</b><span>سنة وأربعة أيام: عمره ﷺ عند الوفاة</span></div>
+      <div class="fact"><b>13</b><span>سنة تقريبًا: العهد المكي</span></div>
+      <div class="fact"><b>10</b><span>سنوات: العهد المدني</span></div>
+      <div class="fact"><b>29</b><span>غزوة خرج فيها بنفسه (جداول التلخيص)</span></div>
+      <div class="fact"><b>13</b><span>امرأة عقد عليهنّ، ومات عن تسع</span></div>
+    </div>
+  </header>
+
+  <div class="controls" role="region" aria-label="تصفية الأحداث">
+    <div class="chips" id="chips"></div>
+    <div class="searchrow">
+      <label for="q" class="visually-hidden" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">بحث</label>
+      <input id="q" type="search" placeholder="ابحث عن حدث أو شخص (مثلًا: سعد، الحديبية، خديجة)">
+      <span id="count" aria-live="polite"></span>
+    </div>
+  </div>
+
+  <main id="timeline"></main>
+  <p class="empty" id="empty" hidden>لا توجد أحداث تطابق هذا الاختيار. جرّب تصنيفًا آخر أو امسح البحث.</p>
+
+  <footer>
+    التواريخ الميلادية قبل الهجرة تقريبية بنصّ المؤلف، وما قبل الهجرة مؤرَّخ بسنوات البعثة. ما وُسم بـ«ترجيح» أو «مختلف فيه» لا يُعرض بوصفه حقيقة قطعية. يذكر سطر المصدر عنوان الفصل في «الرحيق المختوم».
+  </footer>
+</div>
+
+<script>
+const CATS = {
+  life:     {label:"النشأة والأسرة", color:"var(--c-life)"},
+  dawah:    {label:"الوحي والدعوة", color:"var(--c-dawah)"},
+  hijra:    {label:"الهجرة والدولة", color:"var(--c-hijra)"},
+  war:      {label:"الغزوات والسرايا", color:"var(--c-war)"},
+  marriage: {label:"أمهات المؤمنين", color:"var(--c-marriage)"},
+  treaty:   {label:"المعاهدات والسفارات", color:"var(--c-treaty)"}
+};
+
+const ERAS = [
+  {id:1, name:"ما قبل البعثة", span:"قبل المولد – 40 سنة من عمره"},
+  {id:2, name:"العهد المكي", span:"1 – 13 من النبوة"},
+  {id:3, name:"الهجرة وبداية العهد المدني", span:"صفر 14 من النبوة – 1 هـ"},
+  {id:4, name:"مرحلة المواجهات والغزوات", span:"1 – 6 هـ"},
+  {id:5, name:"مرحلة المعاهدات والانتشار", span:"6 – 8 هـ"},
+  {id:6, name:"فتح مكة وما بعده", span:"8 – 10 هـ"},
+  {id:7, name:"حجة الوداع والوفاة", span:"10 – 11 هـ"}
+];
+
+// era, cat, hijri/nabawi date, gregorian, age, flag, title, text, ref (chapter in الرحيق المختوم)
+const EVENTS = [
+  [1,"life","","440م","","","قُصيّ بن كلاب يستولي على مكة","تغلّب على خزاعة فصارت السيادة التامة لقريش، وأسّس دار الندوة واللواء والحجابة والسقاية والرفادة.","«الإمارة بالحجاز»"],
+  [1,"life","المحرّم، قبل المولد بنحو 50 يومًا","571م","","تقريبي","عام الفيل","زحف أبرهة بستين ألف جندي لهدم الكعبة، فبرك الفيل في وادي محسّر وأُرسلت عليهم طير أبابيل.","«وقعة الفيل»"],
+  [1,"life","صبيحة الاثنين 9 ربيع الأول","20 أو 22 أبريل 571م","المولد","تقريبي","مولد النبي ﷺ","وُلد في شِعب بني هاشم بمكة، فسمّاه جدّه عبد المطلب محمدًا وختنه يوم سابعه.","«المولد»"],
+  [1,"life","","571–575م","حتى 4 أو 5 سنين","","الرضاعة في بني سعد وشقّ الصدر","استرضعه جدّه حليمة السعدية، ثم وقع حادث شقّ الصدر فردّته إلى أمّه.","«في بني سعد»"],
+  [1,"life","","577م","6 سنين","تقريبي","وفاة أمّه آمنة بالأبواء","ماتت في طريق العودة من زيارة قبر زوجها بيثرب، فانتقلت كفالته إلى جدّه.","«إلى أمه الحنون»"],
+  [1,"life","","579م","8 سنين وشهران وعشرة أيام","تقريبي","وفاة جدّه عبد المطلب","عهد بكفالته إلى عمّه أبي طالب، فحاطه فوق أربعين سنة.","«إلى جده العطوف»"],
+  [1,"life","","583م","12 سنة","تقريبي","الرحلة إلى الشام ولقاء بَحيرا","خرج مع أبي طالب إلى بُصرى، فعرفه الراهب بصفته وخاتم النبوة وأمر بردّه خوفًا عليه من اليهود.","«بحيرا الراهب»"],
+  [1,"life","","586م","15 سنة","تقريبي","حرب الفِجار ثم حلف الفُضول","شهد الحرب يُنبّل على عمومته، ثم شهد الحلف في دار عبد الله بن جدعان على نصرة كل مظلوم بمكة.","«حرب الفجار» و«حلف الفضول»"],
+  [1,"marriage","","596م","25 سنة","تقريبي","الزواج من خديجة بنت خويلد","تزوّجها بعد رجوعه من الشام في تجارتها، وأصدقها عشرين بَكرة، وهي في الأربعين. لم يتزوّج عليها غيرها حتى ماتت، ومنها كل أولاده سوى إبراهيم.","«زواجه خديجة»"],
+  [1,"life","","605م","35 سنة","تقريبي","بناء الكعبة والتحكيم في الحجر الأسود","تنازعت القبائل في وضع الحجر فحكّموا أوّل داخل، فكان هو: «هذا الأمين، رضينا». وضع الحجر في رداء رفعه رؤساء القبائل.","«بناء الكعبة وقضية التحكيم»"],
+
+  [2,"dawah","ليلة الاثنين 21 رمضان، 1 من النبوة","10 أغسطس 610م","40 سنة","ترجيح","نزول الوحي في غار حراء","نزل جبريل بـ«اقرأ»، فثبّتته خديجة وشهد له ورقة بن نوفل. والتاريخ ترجيح صرّح المؤلف بتفرّده به.","«جبريل ينزل بالوحي»"],
+  [2,"dawah","1 – 3 من النبوة","610–613م","","","الدعوة السرّية","أسلم في أوّل يوم خديجة وزيد وعليّ وأبو بكر، ثم أسلم بدعوة أبي بكر عثمان والزبير وعبد الرحمن وسعد وطلحة.","«الرعيل الأول»"],
+  [2,"dawah","4 من النبوة","613م","","تقريبي","إنذار العشيرة والجهر على الصفا","نزل «وأنذر عشيرتك الأقربين» ثم «فاصدع بما تؤمر»، ونادى على الصفا «يا صباحاه».","«الدعوة في الأقربين» و«على جبل الصفا»"],
+  [2,"dawah","رجب 5 من النبوة","615م","","","الهجرة الأولى إلى الحبشة","اثنا عشر رجلًا وأربع نسوة بقيادة عثمان ومعه رقية، ثم الهجرة الثانية بثلاثة وثمانين رجلًا، وخطبة جعفر أمام النجاشي.","«الهجرة الأولى إلى الحبشة»"],
+  [2,"dawah","ذو الحجة 6 من النبوة","616م","","تقريبي","إسلام حمزة ثم عمر","أسلم حمزة أنفةً لأذى أبي جهل، ثم عمر بعده بثلاثة أيام، فسُمّي الفاروق.","«إسلام حمزة» و«إسلام عمر»"],
+  [2,"dawah","المحرّم 7 – المحرّم 10 من النبوة","617–619م","","","المقاطعة في شِعب أبي طالب","ثلاث سنوات حصار حتى أكلوا الأوراق والجلود، ثم نُقضت الصحيفة بسعي هشام بن عمرو ومن معه، وأكلت الأرضة ما فيها إلا «باسمك اللهم».","«المقاطعة العامة» و«نقض صحيفة الميثاق»"],
+  [2,"life","رجب ورمضان 10 من النبوة","619م","50 سنة","","عام الحزن","توفي أبو طالب، ثم خديجة بعده بنحو شهرين أو ثلاثة ولها خمس وستون سنة.","«عام الحزن»"],
+  [2,"marriage","شوال 10 من النبوة","","","","الزواج من سودة بنت زمعة","أوّل امرأة تزوّجها بعد خديجة، وكانت ممن هاجر الهجرة الثانية إلى الحبشة.","«عام الحزن» و«البيت النبوي»"],
+  [2,"dawah","شوال 10 من النبوة","مايو/يونيو 619م","","تقريبي","رحلة الطائف","سار إليها ماشيًا مع زيد، ورُجم حتى اختضبت نعلاه بالدماء، ثم لقي عدّاسًا، ودخل مكة في جوار المطعم بن عدي.","«الرسول ﷺ في الطائف»"],
+  [2,"marriage","شوال 11 من النبوة","","","","العقد على عائشة بنت أبي بكر","وبنى بها بالمدينة. لم يتزوّج بكرًا غيرها.","«البيت النبوي»"],
+  [2,"dawah","بين 10 و13 من النبوة","620–621م","","مختلف فيه","الإسراء والمعراج","أُسري به بجسده إلى بيت المقدس وعُرج به إلى السماوات، وفُرضت الصلوات الخمس. وزمنه مختلف فيه على ستة أقوال.","«الإسراء والمعراج»"],
+  [2,"hijra","موسم الحج 12 من النبوة","يوليو 621م","","","بيعة العقبة الأولى","اثنا عشر رجلًا من يثرب بايعوا «بيعة النساء» دون ذكر القتال، وبُعث معهم مصعب بن عمير أوّل سفير في الإسلام.","«بيعة العقبة الأولى» و«سفير الإسلام في المدينة»"],
+  [2,"hijra","موسم الحج 13 من النبوة","يونيو 622م","","","بيعة العقبة الثانية","ثلاثة وسبعون رجلًا وامرأتان بايعوا على النصرة والمنع، وانتُخب اثنا عشر نقيبًا: تسعة من الخزرج وثلاثة من الأوس.","«بيعة العقبة الثانية»"],
+
+  [3,"hijra","26 صفر 14 من النبوة","12 سبتمبر 622م","","","قرار دار الندوة","أقرّت قريش اقتراح أبي جهل بقتله بأيدي فتية من كل قبيلة.","«في دار الندوة»"],
+  [3,"hijra","27 صفر","12/13 سبتمبر 622م","","","الخروج إلى غار ثور","نام عليّ على فراشه، وخرج مع أبي بكر جنوبًا إلى ثور فمكثا فيه ثلاث ليال.","«من الدار إلى الغار» و«إذ هما في الغار»"],
+  [3,"hijra","8 ربيع الأول 1 هـ","23 سبتمبر 622م","","","النزول بقباء","أقام أربعة أيام في ترجيح المؤلف، وأسّس مسجد قباء: «أوّل مسجد أُسّس على التقوى بعد النبوة».","«النزول بقباء»"],
+  [3,"hijra","12 ربيع الأول 1 هـ","27 سبتمبر 622م","","","دخول المدينة وأوّل جمعة","جمّع في بني سالم بن عوف بمائة رجل، ثم بركت الناقة في موضع المسجد فنزل عند أبي أيوب.","«الدخول في المدينة»"],
+  [3,"hijra","1 هـ","622م","","","بناء المسجد النبوي والمؤاخاة","بنى المسجد من اللّبن والجريد، وآخى بين تسعين رجلًا في دار أنس بن مالك.","«بناء المسجد النبوي» و«المؤاخاة بين المسلمين»"],
+  [3,"treaty","1 هـ","622م","","","صحيفة المدينة ومعاهدة اليهود","«أمّة واحدة من دون الناس»، و«لليهود دينهم وللمسلمين دينهم»، ومردّ التنازع إلى الله ورسوله.","«ميثاق التحالف الإسلامي» و«معاهدة مع اليهود»"],
+
+  [4,"war","رمضان 1 هـ","مارس 623م","","","سرية سيف البحر","أوّل لواء عقده النبي ﷺ، لحمزة بن عبد المطلب في ثلاثين رجلًا، ولم يقع قتال.","«الغزوات والسرايا قبل بدر»"],
+  [4,"war","صفر 2 هـ","أغسطس 623م","","","غزوة الأبواء (ودّان)","أوّل غزوة غزاها بنفسه، وعقد فيها معاهدة بني ضمرة.","«الغزوات والسرايا قبل بدر»"],
+  [4,"war","رجب 2 هـ","يناير 624م","","","سرية نخلة","بقيادة عبد الله بن جحش: أوّل قتيل وأوّل أسيرين وأوّل خُمس في الإسلام.","«الغزوات والسرايا قبل بدر»"],
+  [4,"war","رمضان 2 هـ","مارس 624م","","تقريبي","غزوة بدر الكبرى","ثلاثمائة وبضعة عشر مقابل نحو ألف: سبعون قتيلًا وسبعون أسيرًا من المشركين، وأربعة عشر شهيدًا.","«غزوة بدر الكبرى»"],
+  [4,"life","أيام بدر، 2 هـ","","","","وفاة رقية بنت النبي ﷺ","تخلّف عثمان عن بدر لتمريضها وضُرب له بسهمه.","«البيت النبوي»"],
+  [4,"war","شوال 2 هـ","","","","غزوة بني قينقاع","أوّل من نكث العهد من اليهود؛ حصار خمس عشرة ليلة ثم الجلاء إلى أذرعات.","«النشاط العسكري بين بدر وأحد»"],
+  [4,"life","بين بدر وأحد","","","","زواج فاطمة من عليّ","ومنها الحسن والحسين وزينب وأم كلثوم.","«البيت النبوي»"],
+  [4,"marriage","3 هـ","","","","الزواج من حفصة بنت عمر","تأيّمت من زوجها خُنيس بن حذافة بين بدر وأحد.","«البيت النبوي»"],
+  [4,"war","7 شوال 3 هـ","","","","غزوة أحد","سبعمائة مقابل ثلاثة آلاف؛ نصر ثم انقلاب بعد ترك الرماة مواقعهم. سبعون شهيدًا، وسبعة وثلاثون قتيلًا للمشركين في تحقيق المؤلف.","«غزوة أحد»"],
+  [4,"war","صفر 4 هـ","","","","الرجيع وبئر معونة","مأساتان في شهر واحد: الغدر بأصحاب الرجيع ومنهم خُبيب، ثم بسبعين من القرّاء.","«السرايا والبعوث بين أحد والأحزاب»"],
+  [4,"war","ربيع الأول 4 هـ","","","","غزوة بني النضير","بعد محاولة إلقاء الرحى عليه؛ حصار ست ليال ثم الجلاء، ونزول سورة الحشر.","«غزوة بني النضير»"],
+  [4,"marriage","4 هـ","","","","الزواج من زينب بنت خزيمة","«أمّ المساكين»، ماتت بعد الزواج بشهرين أو ثلاثة.","«البيت النبوي»"],
+  [4,"marriage","شوال 4 هـ","","","","الزواج من أم سلمة هند بنت أبي أمية","وهي صاحبة المشورة الفاصلة يوم الحديبية.","«البيت النبوي»"],
+  [4,"war","شوال 5 هـ","","","","غزوة الأحزاب (الخندق)","عشرة آلاف حاصروا المدينة نحو شهر؛ خندق أشار به سلمان، ثم تفكّك التحالف وأرسل الله الريح: «الآن نغزوهم ولا يغزوننا».","«غزوة الأحزاب»"],
+  [4,"war","ذو القعدة 5 هـ","","","","غزوة بني قريظة","حصار خمس وعشرين ليلة بعد نقضهم العهد، ثم حكم سعد بن معاذ.","«غزوة بني قريظة»"],
+  [4,"marriage","ذو القعدة 5 هـ","","","","الزواج من زينب بنت جحش","بنت عمّته، وفي زواجها نزلت آيات هدم التبنّي.","«البيت النبوي»"],
+  [4,"war","شعبان 6 هـ","","","","غزوة بني المصطلق وحديث الإفك","إغارة على ماء المريسيع، ثم فتنة ابن أبيّ، ثم شهر من الإفك انتهى ببراءة عائشة.","«غزوة بني المصطلق» و«حديث الإفك»"],
+  [4,"marriage","شعبان 6 هـ","","","","الزواج من جويرية بنت الحارث","فأعتق المسلمون مائة أهل بيت من بني المصطلق: «أصهار رسول الله ﷺ».","«البيت النبوي»"],
+
+  [5,"treaty","ذو القعدة 6 هـ","","","","صلح الحديبية وبيعة الرضوان","ألف وأربعمائة محرمين بالعمرة؛ هدنة عشر سنين بأربعة بنود، ونزول «إنا فتحنا لك فتحًا مبينًا».","«وقعة الحديبية»"],
+  [5,"treaty","المحرّم 7 هـ","","","","مكاتبة الملوك والأمراء","خاتم من فضة نقشه «محمد رسول الله»: أسلم النجاشي، ومزّق كسرى الكتاب، وأكرم المقوقس الرسول.","«مكاتبة الملوك والأمراء»"],
+  [5,"marriage","المحرّم 7 هـ","","","","الزواج من أم حبيبة رملة بنت أبي سفيان","خطبها عند النجاشي بعد أن ارتدّ زوجها في الحبشة وثبتت على دينها.","«البيت النبوي»"],
+  [5,"war","المحرّم 7 هـ","","","","غزوة خيبر","ألف وأربعمائة من أهل الحديبية؛ أُعطيت الراية لعليّ، وأُقرّ أهلها على الأرض بالشطر.","«غزوة خيبر ووادي القرى»"],
+  [5,"marriage","7 هـ، بعد خيبر","","","","الزواج من صفية بنت حُيَيّ","أعتقها وتزوّجها وجعل عتقها صداقها.","«البيت النبوي»"],
+  [5,"treaty","ذو القعدة 7 هـ","","","","عمرة القضاء","ألفان من المسلمين ثلاثة أيام، مع الرمل والاضطباع إظهارًا للقوة.","«عمرة القضاء»"],
+  [5,"marriage","ذو القعدة 7 هـ","","","","الزواج من ميمونة بنت الحارث","آخر من تزوّج، وبنى بها بسَرِف في عمرة القضاء.","«البيت النبوي»"],
+  [5,"war","جمادى الأولى 8 هـ","أغسطس/سبتمبر 629م","","","معركة مؤتة","ثلاثة آلاف أمام جيش ضخم من الروم؛ استُشهد زيد وجعفر وابن رواحة، ثم انسحب خالد بالجيش منظّمًا. اثنا عشر شهيدًا.","«معركة مؤتة»"],
+  [5,"war","جمادى الآخرة 8 هـ","","","","سرية ذات السلاسل","بقيادة عمرو بن العاص، وأمدّه بأبي عبيدة في مائتين.","«سرية ذات السلاسل»"],
+
+  [6,"war","رمضان 8 هـ","","","","فتح مكة","عشرة آلاف بعد نقض قريش الصلح بإعانة بني بكر على خزاعة؛ تطهير البيت من 360 صنمًا، و«اذهبوا فأنتم الطلقاء».","«غزوة فتح مكة»"],
+  [6,"war","10 شوال 8 هـ","","","","غزوة حنين","اثنا عشر ألفًا؛ كمين أحدث هزيمة أولى، ثم ثبات النبي ﷺ ونداء العباس «أين أصحاب السمرة؟».","«غزوة حنين»"],
+  [6,"war","شوال 8 هـ","","","مختلف فيه","غزوة الطائف","حصار اختُلف في مدّته، ثم رُفع، وأسلمت ثقيف بعد ذلك.","«غزوة الطائف»"],
+  [6,"war","رجب – رمضان 9 هـ","","","","غزوة تبوك (آخر الغزوات)","ثلاثون ألفًا في جيش العسرة؛ خمسون يومًا لم يلقوا فيها قتالًا، ومعاهدات أيلة وجرباء وأذرح ودومة.","«غزوة تبوك»"],
+  [6,"life","9 هـ","","","","وفاة أم كلثوم بنت النبي ﷺ","فقال لعثمان: «لو كانت عندي ثالثة لزوّجتكها».","«البيت النبوي»"],
+  [6,"treaty","9 – 10 هـ","","","","عام الوفود","أكثر من سبعين وفدًا، وبلغ التوافد قمّته بعد تبوك.","«الوفود»"],
+  [6,"life","28 أو 29 شوال 10 هـ","","","","وفاة إبراهيم ابن النبي ﷺ","من مارية القبطية، توفي صغيرًا بالمدينة.","«البيت النبوي»"],
+
+  [7,"dawah","ذو الحجة 10 هـ","","","","حجة الوداع","خطبة جامعة بعرفة أمام نحو مائة وأربعة وعشرين ألفًا، ونزول «اليوم أكملت لكم دينكم».","«حجة الوداع»"],
+  [7,"life","29 صفر 11 هـ","","","","بداية المرض","ثلاثة عشر أو أربعة عشر يومًا، صلّى بالناس منها أحد عشر، ثم صلّى أبو بكر بالناس سبع عشرة صلاة.","«إلى الرفيق الأعلى»"],
+  [7,"life","الاثنين 12 ربيع الأول 11 هـ","","63 سنة وأربعة أيام","","وفاة النبي ﷺ","حين اشتدّت الضحى، وآخر كلامه: «اللهم الرفيق الأعلى». وثبّت أبو بكر الناس بقوله تعالى «وما محمد إلا رسول».","«إلى الرفيق الأعلى»"],
+  [7,"life","13 – 14 ربيع الأول 11 هـ","","","","التجهيز والدفن","غُسّل في ثيابه، وصلّى الناس عليه أرسالًا بلا إمام، ودُفن حيث قُبض ليلة الأربعاء.","«إلى الرفيق الأعلى»"]
+];
+
+let active = "all";
+const chipsEl = document.getElementById("chips");
+const q = document.getElementById("q");
+
+function makeChip(key, label, color){
+  const b = document.createElement("button");
+  b.type = "button"; b.className = "chip"; b.id = "chip-" + key;
+  b.setAttribute("aria-pressed", key === active ? "true" : "false");
+  if (color){ b.style.setProperty("--c", color); b.innerHTML = '<span class="dot" aria-hidden="true"></span>'; }
+  b.appendChild(document.createTextNode(label));
+  b.addEventListener("click", () => { active = key; render(); });
+  chipsEl.appendChild(b);
+}
+makeChip("all", "الكل");
+Object.entries(CATS).forEach(([k,v]) => makeChip(k, v.label, v.color));
+
+function esc(s){ return s.replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])); }
+
+function render(){
+  chipsEl.querySelectorAll(".chip").forEach(c => c.setAttribute("aria-pressed", c.id === "chip-" + active ? "true" : "false"));
+  const term = q.value.trim();
+  const root = document.getElementById("timeline");
+  root.innerHTML = "";
+  let shown = 0;
+  ERAS.forEach(era => {
+    const list = EVENTS.filter(e => e[0] === era.id
+      && (active === "all" || e[1] === active)
+      && (!term || e.slice(2).join(" ").includes(term)));
+    if (!list.length) return;
+    shown += list.length;
+    const sec = document.createElement("section");
+    sec.className = "era";
+    sec.innerHTML = '<div class="era-head"><span class="num">المرحلة ' + ["","الأولى","الثانية","الثالثة","الرابعة","الخامسة","السادسة","السابعة"][era.id] +
+      '</span><h2>' + esc(era.name) + '</h2><span class="span">' + esc(era.span) + '</span></div>';
+    const ol = document.createElement("ol");
+    ol.className = "events";
+    list.forEach(([, cat, h, g, age, flag, title, text, ref]) => {
+      const li = document.createElement("li");
+      li.className = "ev";
+      li.style.setProperty("--c", CATS[cat].color);
+      li.innerHTML =
+        '<div class="when">' + (h ? '<span class="h">' + esc(h) + '</span>' : '') +
+        (g ? '<span>' + esc(g) + '</span>' : '') +
+        (age ? '<span class="tag">العمر: ' + esc(age) + '</span>' : '') +
+        (flag ? '<span class="tag">' + esc(flag) + '</span>' : '') +
+        '<span class="tag cat">' + esc(CATS[cat].label) + '</span></div>' +
+        '<h3>' + esc(title) + '</h3><p>' + esc(text) + '</p>' +
+        '<div class="ref">المصدر في الرحيق المختوم: ' + esc(ref) + '</div>';
+      ol.appendChild(li);
+    });
+    sec.appendChild(ol);
+    root.appendChild(sec);
+  });
+  document.getElementById("count").textContent = shown + " حدثًا";
+  document.getElementById("empty").hidden = shown > 0;
+}
+q.addEventListener("input", render);
+render();
+</script>
+
+</body></html>
